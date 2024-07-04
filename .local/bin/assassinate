@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+set -xv # debug
+echo -e "bash --init-file ~/.local/bin/assasinate\nread cont" > ~/.shortcuts/.assasinate # CREATE
+rm -f ~/.shortcuts/* # DELETE
+mv ~/.shortcuts/.assasinate ~/.shortcuts/assasinate # UPDATE
+[[ -r ~/.shortcuts/assasinate ]] && echo "berhasil dieksekusi!" # READ
