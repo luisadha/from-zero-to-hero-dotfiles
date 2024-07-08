@@ -1,0 +1,7 @@
+# .aliases -*- mode: sh/bash -*-
+
+alias pr='nvim $PREFIX/etc/profile'
+alias bbrc='nvim $PREFIX/etc/bash.bashrc'
+alias dbrc='nvim ~/.bashrc'
+alias dbpr='nvim ~/.bash_profile'
+alias dpr='nvim ~/.profile'
