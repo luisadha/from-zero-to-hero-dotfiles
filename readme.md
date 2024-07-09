@@ -132,4 +132,5 @@ if [ -r /data/data/com.termux/files/home/.bashrc ]; then
       . /data/data/com.termux/files/home/.bashrc
 fi
     fi
+fi
 ```
