@@ -1,0 +1,4 @@
+# Untuk termux
+
+unset TERM
+login
