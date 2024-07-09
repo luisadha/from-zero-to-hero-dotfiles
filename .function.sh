@@ -1,3 +1,4 @@
+# .functions.sh -*- mode: sh/bash -*-
 # for bash preexec login shells sessions
 
 preexec() { echo -e "just typed $1\n"; }
