@@ -1,7 +1,7 @@
 # dotfiles
 
 
-# ../usr/etc/bash.bashrc
+# ~/../usr/etc/bash.bashrc
 
 ```sh
 # Command history tweaks:
@@ -85,4 +85,51 @@ fi
 completion ] && . /data/data/com.termux/files/usr/share/bash-com
 pletion/bash_completion
 alias games='cd && cd Termux-Games && bash games.sh'
+```
+
+# ~/../usr/etc/profile
+
+```sh
+case $- in
+  *i*)
+
+    function realtime_date() {
+                    local args="$@"
+                    echo -e "[$(date | awk '{print $4}' | cut -c
+ 1,2,4,5,7,8)] $args"
+                  }
+      ;;
+    *)
+      return;;
+  esac
+
+
+realtime_date "Load from.. (profile)"
+
+for i in /data/data/com.termux/files/usr/etc/profile.d/*.sh; do
+
+        if [ -r $i ]; then
+        realtime_date "Load from.. (profile.d)"
+                . $i
+        fi
+done
+unset i
+
+# Source etc/bash.bashrc and ~/.bashrc also for interactive bash
+ login shells:
+
+
+
+if [ "$BASH" ]; then
+   if [[ "$-" == *"i"* ]]; then
+  echo "*[LOGIN SHELLS]*"
+if [ -r /data/data/com.termux/files/usr/etc/bash.bashrc ]; then
+      realtime_date "Load from.. (bash-bashrc)"
+      . /data/data/com.termux/files/usr/etc/bash.bashrc
+fi
+if [ -r /data/data/com.termux/files/home/.bashrc ]; then
+      realtime_date "Load from.. (.bashrc)"
+      . /data/data/com.termux/files/home/.bashrc
+fi
+    fi
 ```
